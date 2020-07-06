@@ -12,10 +12,10 @@ import './App.css';
 const particlesOptions = {
   particles: {
     number: {
-      value: 30,
+      value: 150,
       density: {
         enable: true,
-        value_area: 800
+        value_area: 700
       }
     }
   }
@@ -75,7 +75,7 @@ class App extends Component {
 
   onButtonSubmit = () => {
     this.setState({imageUrl: this.state.input});
-      fetch('https://git.heroku.com/salty-ravine-61045.git/imageurl', {
+      fetch('https://pure-reef-98985.herokuapp.com/imageurl', {
         method: 'post',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
@@ -85,7 +85,7 @@ class App extends Component {
       .then(response => response.json())
       .then(response => {
         if (response) {
-          fetch('https://git.heroku.com/salty-ravine-61045.git:3000/image', {
+          fetch('https://pure-reef-98985.herokuapp.com/image', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
